@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2) do
 
   create_table "requests", force: :cascade do |t|
     t.string "item"
-    t.string "vender"
+    t.string "vendor"
     t.integer "quantity"
     t.float "price"
     t.string "link"

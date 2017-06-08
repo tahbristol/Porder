@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 1) do
+ActiveRecord::Schema.define(version: 2) do
+
+  create_table "requests", force: :cascade do |t|
+    t.string "item"
+    t.string "vender"
+    t.integer "quantity"
+    t.float "price"
+    t.string "link"
+    t.integer "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.string "email"
     t.string "password"
     t.string "password_confirmation"
     t.string "password_digest"

@@ -12,3 +12,8 @@
   <p>Time of request: <%= request.created_at %></p><br>
 
   <%end%>
+
+  <form action="/requests/<%=@user.slug%>/show" method='get' >
+    <input type="submit" value="My Requests">
+
+  </form>

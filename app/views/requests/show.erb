@@ -13,3 +13,15 @@
   <p>Time of request: <%= request.created_at %></p><br>
   <p>################################################</p>
   <%end%>
+  <form action="/requests" method='get' >
+    <input type="submit" value="All Requests">
+
+  </form><br>
+  <form action="/new-request" method='get' >
+    <input type="submit" value="New Requests">
+
+  </form><br>
+  <form action="/logout" method='post' >
+    <input type="submit" value="logout">
+
+  </form>

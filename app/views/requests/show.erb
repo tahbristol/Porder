@@ -1,0 +1,15 @@
+<h3>Current Requests</h3>
+<% @requests.each.with_index(1) do |request,i| %>
+
+  <h5>Request: <%= i %></h5>
+  <p>Item: <%= request.item %></p>
+  <p>Price: <%= request.price %></p><br>
+  <p>Qty: <%= request.quantity %></p><br>
+  <p>Vendor: <%= request.vendor %></p><br>
+  <p>URL: <%= request.url %></p><br>
+  <% if !!request.user%>
+  <p>Requester: <%= request.user.name %></p><br>
+  <%end%>
+  <p>Time of request: <%= request.created_at %></p><br>
+  <p>################################################</p>
+  <%end%>

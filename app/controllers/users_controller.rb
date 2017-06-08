@@ -10,8 +10,8 @@ class UsersController < ApplicationController
     erb :'/users/signup'
   end
 
-  get '/users/:id'do
-    @user = User.find_by_id(params[:id])
+  get '/users/:slug'do
+    @user = User.find_by_slug(params[:slug])
     erb :'/users/show'
   end
 
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 post '/signup'do
   if params[:password] == params[:password_confirm]
     @user = User.create(name: params[:name], email: params[:email], password: params[:password])
-    redirect to "/users/#{@user.id}"
+    redirect to "/users/#{@user.slug}"
   else
     flash[:message] = "Passwords do not match."
     redirect to "/signup"

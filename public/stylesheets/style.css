@@ -1,0 +1,12 @@
+div {
+  text-align: center;
+}
+
+.welcome {
+  margin-top:100px;
+}
+
+form.form-signin{
+  margin-right: 0px  !important;
+  width: 200px;
+}

@@ -14,7 +14,7 @@ gem 'bcrypt'
 gem 'sinatra-contrib', :require => 'sinatra/reloader'
 gem 'require_all'
 gem 'thin'
-
+gem 'rack-flash3', :require => 'rack-flash'
 
 
 group :test do

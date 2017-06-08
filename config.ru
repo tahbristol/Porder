@@ -8,4 +8,5 @@ end
 use UsersController
 use RequestsController
 use Rack::MethodOverride
+use Rack::Flash
 run ApplicationController

@@ -7,7 +7,8 @@ class CreateRequests < ActiveRecord::Migration[5.0]
       t.float :price
       t.string :link
       t.integer :user_id
-      t.datetime
+      t.string :url
+      t.timestamps
     end
   end
 end

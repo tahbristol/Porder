@@ -9,4 +9,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, Proc.new{File.join(root,"../public")}
     set :views, 'app/views'
   end
+
+
+
 end

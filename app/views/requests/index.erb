@@ -1,0 +1,14 @@
+<% Request.all.each do |request| %>
+
+  <h3>Request No.: <%= request.id %></h3>
+  <p>Item: <%= request.item %></p>
+  <p>Price: <%= request.price %></p><br>
+  <p>Qty: <%= request.quantity %></p><br>
+  <p>Vendor: <%= request.vendor %></p><br>
+  <p>URL: <%= request.url %></p><br>
+  <% if !!request.user%>
+  <p>Requester: <%= request.user.name %></p><br>
+  <%end%>
+  <p>Time of request: <%= request.created_at %></p><br>
+
+  <%end%>

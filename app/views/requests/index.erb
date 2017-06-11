@@ -1,25 +1,36 @@
+<table id='requests'>
+  <tr>
+    <th>Request</th>
+    <th>Item</th>
+    <th>Price</th>
+    <th>Qty.</th>
+    <th>Vendor</th>
+    <th>URL</th>
+    <th>Requestor</th>
+    <th>Date</th>
+
+  </tr>
+
+
 <% Request.all.each do |request| %>
+  <tr>
+    <td><%=request.id %></td>
+    <td><%=request.item %></td>
+    <td><%=request.price %></td>
+    <td><%=request.quantity %></td>
+    <td><%=request.vendor %></td>
+    <td><%=request.url %></td>
+    <% if !!request.user%>
+    <td><%=request.user.name %></td>
+    <%else%>
+    <td></td>
+    <%end%>
+    <td><%=request.created_at %></td>
 
-<h3>Request No.:
-  <%= request.id %></h3>
-<p>Item:
-  <%= request.item %></p>
-<p>Price:
-  <%= request.price %></p><br>
-<p>Qty:
-  <%= request.quantity %></p><br>
-<p>Vendor:
-  <%= request.vendor %></p><br>
-<p>URL:
-  <%= request.url %></p><br>
-<% if !!request.user%>
-<p>Requester:
-  <%= request.user.name %></p><br>
-<%end%>
-<p>Time of request:
-  <%= request.created_at %></p><br>
+  </tr>
+ <%end%>
+</table><br>
 
-<%end%>
 
 <form action="/requests/<%=@user.slug%>/show" method='get'>
   <input type="submit" value="My Requests">

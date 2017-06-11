@@ -1,4 +1,4 @@
-div {
+.col-sm-12 {
   text-align: center;
 }
 
@@ -9,4 +9,25 @@ div {
 form.form-signin{
   margin-right: 0px  !important;
   width: 200px;
+}
+
+
+table#requests{
+    margin: 0 auto;
+    width:1000px;
+    table-layout: fixed;
+}
+table#requests tr:nth-child(even) {
+    background-color: #dddddd;
+    padding:12px;
+}
+
+table#requests tr td {
+  padding:12px;
+  border:1px solid black;
+  width:50px;
+}
+
+table#requests tr th {
+  text-align: center;
 }

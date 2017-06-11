@@ -1,16 +1,18 @@
-<h2><%=@user.name%></h2>
+
+<h2><%=@user.name%></h2><br>
 <p><%=@user.email%></p>
 
 <form action="/requests/<%=@user.slug%>/show" method='get'>
-  <input type="submit" value="View Requests">
+  <button class='btn-primary' type="submit" value="View Requests">View Requests</button>
 
-</form>
-<form action="/new-request" method='get'>
-  <input type="submit" value="New Requests">
+</form><br>
 
-</form>
+<form action="/requests/new" method='get'>
+  <button class='btn-primary' type="submit" value="New Requests">New Request</button>
+
+</form><br>
 
 <form action="/logout" method='post'>
-  <input type="submit" value="logout">
+  <button class='btn-primary' type="submit" value="logout">Logout</button>
 
 </form>

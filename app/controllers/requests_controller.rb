@@ -28,11 +28,19 @@ class RequestsController < ApplicationController
   ################################################
 
   post '/new'do
-
+  @user = User.find_by_id(session[:user_id])
+      params[:request].each do |request|
+      @user.requests.build(item: request[:item], vendor: request[:vendor], quantity: request[:quantity], price: request[:price], url: request[:url])
+      @user.save
+    end
+    redirect to "/requests/#{@user.slug}/show"
+  
+=begin
     @user = User.find_by_id(session[:user_id])
     @user.requests.build(item: params[:item], vendor: params[:vendor], quantity: params[:quantity], price: params[:price], url: params[:url])
     @user.save
     redirect to "/requests/#{@user.slug}/show"
+=end
   end
 
 end

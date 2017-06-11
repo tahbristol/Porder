@@ -27,7 +27,7 @@ class RequestsController < ApplicationController
 
   ################################################
 
-  post '/requests/new'do
+  post '/new'do
 
     @user = User.find_by_id(session[:user_id])
     @user.requests.build(item: params[:item], vendor: params[:vendor], quantity: params[:quantity], price: params[:price], url: params[:url])

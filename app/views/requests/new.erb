@@ -1,7 +1,28 @@
 <h2>New Request</h2>
 
-<form action="requests/new" method="post">
-  <label>Item:
+<form action="/new" method="post">
+  <table class="requests">
+  <tr>
+
+    <th>Item</th>
+    <th>Price</th>
+    <th>Qty.</th>
+    <th>Vendor</th>
+    <th>URL</th>
+
+
+  </tr>
+
+
+  <tr>
+    <td><input id="item" name="item"></td>
+    <td><input id="price" name="price"></td>
+    <td><input id="quantity" name="quantity"></td>
+    <td><input id="vendor" name="vendor"></td>
+    <td><input id="url" name="url"></td>
+  </tr>
+</table><br>
+  <!--<label>Item:
     <input id="item" name="item">
   </label><br>
   <label>Price:
@@ -15,7 +36,8 @@
   </label><br>
   <label>Url:
     <input id="url" name="url">
-  </label><br>
+  </label><br>-->
 
   <input type="submit" value="Submit Request">
 </form>
+<button id="addLine">Add Line</button>

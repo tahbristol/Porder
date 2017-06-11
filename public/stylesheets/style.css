@@ -12,22 +12,31 @@ form.form-signin{
 }
 
 
-table#requests{
+table.requests{
+  word-wrap: break-word;
     margin: 0 auto;
     width:1000px;
     table-layout: fixed;
 }
-table#requests tr:nth-child(even) {
+table.requests tr:nth-child(even) {
     background-color: #dddddd;
     padding:12px;
 }
 
-table#requests tr td {
+table.requests tr td {
   padding:12px;
   border:1px solid black;
   width:50px;
 }
 
-table#requests tr th {
+table.requests tr th {
   text-align: center;
+}
+
+table.requests td input {
+  width: 100px;
+}
+
+table.requests td input:focus{
+  width: 200px;
 }

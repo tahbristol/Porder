@@ -40,3 +40,7 @@ table.requests td input {
 table.requests td input:focus{
   width: 200px;
 }
+
+ table.requests td input#ordered {
+  width:10px;
+}

@@ -27,15 +27,12 @@
     <td></td>
     <%end%>
     <td><%=request.created_at %></td>
-    <td><input type="checkbox"></td>
+    <td><input id="ordered" name="ordered" type="checkbox" /></td>
   </tr>
  <%end%>
-<<<<<<< HEAD
 
-</table><br>
-=======
 </table></div><br>
->>>>>>> 1966cc0af104652cf7dfef234c07fee5c249215c
+
 
 
 <form action="/requests/<%=@user.slug%>/show" method='get'>

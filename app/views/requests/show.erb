@@ -1,6 +1,6 @@
 <h3>Current Requests</h3>
-
-<table class='requests'>
+<div class="table-responsive">
+<table class='requests table'>
   <tr>
     <th>Request</th>
     <th>Item</th>
@@ -27,7 +27,7 @@
     <td><%=request.created_at %></td>
   </tr>
  <%end%>
-</table><br>
+</table></div><br>
 
 <form action="/requests" method='get'>
   <input type="submit" value="All Requests">

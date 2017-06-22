@@ -34,13 +34,18 @@ class RequestsController < ApplicationController
       @user.save
     end
     redirect to "/requests/#{@user.slug}/show"
-  
-=begin
-    @user = User.find_by_id(session[:user_id])
-    @user.requests.build(item: params[:item], vendor: params[:vendor], quantity: params[:quantity], price: params[:price], url: params[:url])
-    @user.save
-    redirect to "/requests/#{@user.slug}/show"
-=end
+
   end
+
+  post '/requests/delete'do
+      @user = User.find_by_id(session[:user_id])
+      
+    params[:request][:request_ids].each do |request|
+      request = Request.find_by_id(request)
+      request.destroy
+    end
+    redirect to "/requests/#{@user.slug}/show"
+end
+
 
 end

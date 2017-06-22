@@ -44,3 +44,7 @@ table.requests td input:focus{
  table.requests td input#ordered {
   width:10px;
 }
+
+.highlight{
+  background-color: yellow !important;
+}

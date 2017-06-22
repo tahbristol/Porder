@@ -1,6 +1,6 @@
 <h3>Current Requests</h3>
 <div class="table-responsive">
-<table class='requests table'>
+<table class='requests table currentRequests'>
   <tr>
     <th>Request</th>
     <th>Item</th>
@@ -11,8 +11,10 @@
     <th>Requestor</th>
     <th>Date</th>
   </tr>
+  <form action='/requests/delete' method='post'>
 <% @requests.each do |request| %>
-  <tr>
+
+  <tr class="userRequests">
     <td><%=request.id %></td>
     <td><%=request.item %></td>
     <td><%=request.price %></td>
@@ -20,15 +22,23 @@
     <td><%=request.vendor %></td>
     <td><%=request.url %></td>
     <% if !!request.user%>
+
     <td><%=request.user.name %></td>
     <%else%>
     <td></td>
     <%end%>
     <td><%=request.created_at %></td>
+    <td><input type="checkbox"
+    name="request[request_ids][]"
+    value="<%=request.id%>"
+    id="<%=request.id%>"></input></td>
   </tr>
  <%end%>
-</table></div><br>
 
+
+</table></div><br>
+  <input type="submit" value="Delete"/><br>
+</form>
 <form action="/requests" method='get'>
   <input type="submit" value="All Requests">
 

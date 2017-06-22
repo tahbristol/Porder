@@ -48,3 +48,8 @@ table.requests td input:focus{
 .highlight{
   background-color: yellow !important;
 }
+
+table.requests .userRequests td input.requestDeleteCheck {
+  width: 10px;
+  height: 10px;
+}

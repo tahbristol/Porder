@@ -14,7 +14,7 @@
   <form action='/requests/delete' method='post'>
 <% @requests.each do |request| %>
 
-  <tr class="userRequests">
+  <tr class="userRequests <%= request.id%>">
     <td><%=request.id %></td>
     <td><%=request.item %></td>
     <td><%=request.price %></td>
@@ -31,12 +31,14 @@
     <td><input type="checkbox"
     name="request[request_ids][]"
     value="<%=request.id%>"
-    id="<%=request.id%>"></input></td>
+      id="<%= request.id%>"
+
+    class="requestDeleteCheck"></input></td>
   </tr>
  <%end%>
 
 
-</table></div><br>
+<br></table></div><br>
   <input type="submit" value="Delete"/><br>
 </form>
 <form action="/requests" method='get'>

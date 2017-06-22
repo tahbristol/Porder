@@ -12,13 +12,13 @@ $(document).ready(function() {
 
   });
 
-    $(".requestDeleteCheck").on("click", function(){
+  $(".requestDeleteCheck").on("click", function() {
 
-      var parent = $(this).parent();
+    var parent = $(this).parent();
 
-        parent.parent().toggleClass("highlight");
+    parent.parent().toggleClass("highlight");
 
-    });
+  });
 
 
 

@@ -39,7 +39,7 @@ class RequestsController < ApplicationController
 
   post '/requests/delete'do
       @user = User.find_by_id(session[:user_id])
-      
+
     params[:request][:request_ids].each do |request|
       request = Request.find_by_id(request)
       request.destroy

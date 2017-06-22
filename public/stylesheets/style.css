@@ -3,30 +3,30 @@
 }
 
 .welcome {
-  margin-top:100px;
+  margin-top: 100px;
 }
 
-form.form-signin{
-  margin-right: 0px  !important;
+form.form-signin {
+  margin-right: 0px !important;
   width: 200px;
 }
 
-
-table.requests{
+table.requests {
   word-wrap: break-word;
-    margin: 0 auto;
-    width:1000px;
-    table-layout: fixed;
+  margin: 0 auto;
+  width: 1000px;
+  table-layout: fixed;
 }
+
 table.requests tr:nth-child(even) {
-    background-color: #dddddd;
-    padding:12px;
+  background-color: #dddddd;
+  padding: 12px;
 }
 
 table.requests tr td {
-  padding:12px;
-  border:1px solid black;
-  width:50px;
+  padding: 12px;
+  border: 1px solid black;
+  width: 50px;
 }
 
 table.requests tr th {
@@ -37,19 +37,19 @@ table.requests td input {
   width: 100px;
 }
 
-table.requests td input:focus{
+table.requests td input:focus {
   width: 200px;
 }
 
- table.requests td input#ordered {
-  width:10px;
+table.requests td input#ordered {
+  width: 10px;
 }
 
-.highlight{
-  background-color: yellow !important;
+.highlight {
+  background-color: lightblue !important;
 }
 
 table.requests .userRequests td input.requestDeleteCheck {
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
 }

@@ -1,43 +1,58 @@
 <h3>Current Requests</h3>
 <div class="table-responsive">
-<table class='requests table'>
-  <tr>
-    <th>Request</th>
-    <th>Item</th>
-    <th>Price</th>
-    <th>Qty.</th>
-    <th>Vendor</th>
-    <th>URL</th>
-    <th>Requestor</th>
-    <th>Date</th>
-  </tr>
-<% @requests.each do |request| %>
-  <tr>
-    <td><%=request.id %></td>
-    <td><%=request.item %></td>
-    <td><%=request.price %></td>
-    <td><%=request.quantity %></td>
-    <td><%=request.vendor %></td>
-    <td><%=request.url %></td>
-    <% if !!request.user%>
-    <td><%=request.user.name %></td>
-    <%else%>
-    <td></td>
-    <%end%>
-    <td><%=request.created_at %></td>
-  </tr>
- <%end%>
-</table></div><br>
+  <table class='requests table currentRequests'>
+    <tr>
+      <th>Request No.</th>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Qty.</th>
+      <th>Vendor</th>
+      <th>URL</th>
+      <th>Requestor</th>
+      <th>Date</th>
 
-<form action="/requests" method='get'>
+      <th>Delete</th>
+    </tr>
+    <form action='/requests/delete' method='post'>
+      <% @requests.each do |request| %>
+
+      <tr>
+        <td><%=request.id %></td>
+        <td><%=request.item %></td>
+        <td><%=request.price %></td>
+        <td><%=request.quantity %></td>
+        <td><%=request.vendor %></td>
+        <td><%=request.url %></td>
+        <% if !!request.user%>
+        <td><%=request.user.name %></td>
+        <%else%>
+        <td></td>
+        <%end%>
+        <td><%=request.created_at %></td>
+        <td>
+          <input type="checkbox" name="request[request_ids][]" value="<%=request.id%>" class="requestDeleteCheck"></input>
+        </td>
+      </tr>
+      <%end%>
+
+      <br></table>
+  </div><br>
+  <input id="deleteForm" type="submit" value="Delete"/><br>
+</form>
+<form id="allRequestsForm" action="/requests" method='get'>
   <input type="submit" value="All Requests">
 
 </form><br>
-<form action="/requests/new" method='get'>
+
+<form id="editForm" action="/requests/edit" method='get'>
+  <input type="submit" value="Edit Requests">
+
+</form><br>
+<form id="newForm" action="/requests/new" method='get'>
   <input type="submit" value="New Requests">
 
 </form><br>
-<form action="/logout" method='post'>
+<form id="logout" action="/logout" method='post'>
   <input type="submit" value="logout">
 
 </form>

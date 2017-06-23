@@ -11,7 +11,20 @@ form.form-signin {
   width: 200px;
 }
 
-table.requests {
+td {
+  vertical-align: middle;
+  vertical-align: middle !important;
+}
+
+tr {
+  border-radius: 8px;
+}
+
+table.requests, th, tr, td {
+  border: 1px solid black !important;
+}
+
+table.requests, tr, td {
   word-wrap: break-word;
   margin: 0 auto;
   width: 1000px;
@@ -24,9 +37,9 @@ table.requests tr:nth-child(even) {
 }
 
 table.requests tr td {
-  padding: 12px;
   border: 1px solid black;
   width: 50px;
+  padding: 12px;
 }
 
 table.requests tr th {
@@ -41,15 +54,30 @@ table.requests td input:focus {
   width: 200px;
 }
 
+table.requests td input.requestDeleteCheck {
+  width: 15px;
+}
+
 table.requests td input#ordered {
-  width: 10px;
+  width: 20px;
 }
 
 .highlight {
   background-color: lightblue !important;
 }
 
-table.requests .userRequests td input.requestDeleteCheck {
+table.requests .userRequests td input.requestDeleteCheck, table.requests .userRequests td input#ordered {
   width: 15px;
   height: 15px;
+}
+
+hr {
+  width: 20%;
+}
+
+
+/*********Buttons***********/
+
+input#deleteForm, input#newForm, input#cancelForm, button#addLine {
+  margin-bottom: 25px;
 }

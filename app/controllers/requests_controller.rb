@@ -19,16 +19,36 @@ class RequestsController < ApplicationController
     end
   end
 
+  get '/requests/cancel'do
+  if logged_in?(session)
+    @user = User.find_by_id(session[:user_id])
+    @requests = @user.requests
+    erb :'/requests/show'
+  else
+    redirect to '/login'
+  end
+end
+
   get '/requests/:slug/show'do
+    if logged_in?(session)
     @user = User.find_by_slug(params[:slug])
     @requests = @user.requests
     erb :'/requests/show'
+  else
+    redirect to '/login'
+  end
+
   end
 
   get '/requests/edit'do
+    if logged_in?(session)
     @user = User.find_by_id(session[:user_id])
     @requests = @user.requests
     erb :'/requests/edit'
+  else
+    redirect to '/login'
+  end
+
 end
 
   ################################################

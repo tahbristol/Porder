@@ -1,0 +1,28 @@
+<h2>New Request</h2>
+
+<form action="/requests/edit" method="post">
+  <div class="table-responsive">
+    <table class="requests table">
+      <tr>
+
+        <th>Item</th>
+        <th>Price</th>
+        <th>Qty.</th>
+        <th>Vendor</th>
+        <th>URL</th>
+
+      </tr>
+      <%@requests.each do |request| %>
+      <tr>
+        <td><input id="item" placeholder="<%=request.item%>" name="request[][item]"></td>
+        <td><input id="price" placeholder="<%=request.price%>" name="request[][price]"></td>
+        <td><input id="quantity" placeholder="<%=request.quantity%>" name="request[][quantity]"></td>
+        <td><input id="vendor" placeholder="<%=request.vendor%>" name="request[][vendor]"></td>
+        <td><input id="url" placeholder="<%=request.url%>" name="request[][url]"></td>
+      </tr>
+      <%end%>
+    </table>
+  </div><br>
+
+  <input type="submit" value="Edit Requests">
+</form>

@@ -10,6 +10,7 @@
       <th>URL</th>
       <th>Requestor</th>
       <th>Date</th>
+      <th>Edit</th>
       <th>Delete</th>
     </tr>
     <form action='/requests/delete' method='post'>
@@ -43,8 +44,12 @@
   <input type="submit" value="All Requests">
 
 </form><br>
-<form action="/requests/new" method='get'>
-  <input type="submit" value="New Requests">
+<form action="/logout" method='post'>
+  <input type="submit" value="logout">
+
+</form><br>
+<form action="/requests/edit" method='get'>
+  <input type="submit" value="Edit Requests">
 
 </form><br>
 <form action="/logout" method='post'>

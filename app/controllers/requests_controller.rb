@@ -25,6 +25,12 @@ class RequestsController < ApplicationController
     erb :'/requests/show'
   end
 
+  get '/requests/edit'do
+    @user = User.find_by_id(session[:user_id])
+    @requests = @user.requests
+    erb :'/requests/edit'
+end
+
   ################################################
 
   post '/new'do
@@ -45,7 +51,11 @@ class RequestsController < ApplicationController
       request.destroy
     end
     redirect to "/requests/#{@user.slug}/show"
-end
+   end
 
+   post '/requests/edit'do
+
+
+    end 
 
 end

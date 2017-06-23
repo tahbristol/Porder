@@ -1,41 +1,39 @@
 <div class="table-responsive">
-<table class='requests table'>
-  <tr>
-    <th>Request</th>
-    <th>Item</th>
-    <th>Price</th>
-    <th>Qty.</th>
-    <th>Vendor</th>
-    <th>URL</th>
-    <th>Requestor</th>
-    <th>Date</th>
-    <th>Ordered</th>
-  </tr>
+  <table class='requests table'>
+    <tr>
+      <th>Request</th>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Qty.</th>
+      <th>Vendor</th>
+      <th>URL</th>
+      <th>Requestor</th>
+      <th>Date</th>
+      <th>Ordered</th>
+    </tr>
 
-
-<% Request.all.each do |request| %>
-  <tr>
-    <td><%=request.id %></td>
-    <td><%=request.item %></td>
-    <td><%=request.price %></td>
-    <td><%=request.quantity %></td>
-    <td><%=request.vendor %></td>
-    <td><%=request.url %></td>
-    <% if !!request.user%>
-    <td><%=request.user.name %></td>
-    <%else%>
-    <td></td>
+    <% Request.all.each do |request| %>
+    <tr>
+      <td><%=request.id %></td>
+      <td><%=request.item %></td>
+      <td><%=request.price %></td>
+      <td><%=request.quantity %></td>
+      <td><%=request.vendor %></td>
+      <td><%=request.url %></td>
+      <% if !!request.user%>
+      <td><%=request.user.name %></td>
+      <%else%>
+      <td></td>
+      <%end%>
+      <td><%=request.created_at %></td>
+      <td><input id="ordered" name="ordered" type="checkbox"/></td>
+    </tr>
     <%end%>
-    <td><%=request.created_at %></td>
-    <td><input id="ordered" name="ordered" type="checkbox" /></td>
-  </tr>
- <%end%>
 
-</table></div><br>
-
-
+  </table>
+</div><br>
 
 <form action="/requests/<%=@user.slug%>/show" method='get'>
   <input type="submit" value="My Requests">
 
-</form>
+</form><br>

@@ -85,6 +85,19 @@ hr {
 }
 
 
+/*******Profile*******/
+
+#profile-card {
+  border: 1px solid #4B4B4B;
+  border-radius: 8px;
+  max-width: 800px;
+}
+
+#profile-card .col-sm-6 {
+  padding: 20px;
+}
+
+
 /*********Login********/
 
 #loginButton {

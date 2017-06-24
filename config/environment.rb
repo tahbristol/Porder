@@ -3,6 +3,11 @@ require 'bundler/setup'
 
 Bundler.require(:default, ENV['SINATRA_ENV'])
 ActiveRecord::Base.logger = Logger.new(STDOUT)
+ActiveRecord::Base.establish_connection(
+  :adapter => "sqlite3",
+  :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
+)
+=begin
 ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
-
+=end
 require_all 'app'

@@ -13,7 +13,7 @@ gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'bcrypt'
 gem 'sinatra-contrib', :require => 'sinatra/reloader'
 gem 'require_all'
-gem 'thin'
+gem 'puma'
 gem 'rack-flash3', :require => 'rack-flash'
 gem 'pg'
 

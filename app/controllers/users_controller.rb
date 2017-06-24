@@ -41,7 +41,9 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect to "/users/#{@user.slug}"
     else
+=begin
       flash[:message] = "Passwords do not match."
+=end
       redirect to "/signup"
 
     end
@@ -52,9 +54,13 @@ class UsersController < ApplicationController
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
+      session.options[:expire_after] = 2592000 unless params[:remember_me].nil?
+      [200, {:msg => 'User logged in'}.to_json]
       redirect to "/users/#{@user.slug}"
     else
+=begin
       flash[:message] = "Those credentails are not found in our system."
+=end
       redirect to '/login'
     end
   end
@@ -70,7 +76,7 @@ class UsersController < ApplicationController
 
 
 
-  
+
 
 
 

@@ -7,9 +7,13 @@
 }
 
 form.form-signin {
-  margin-right: 0px !important;
+  margin-left: auto;
+  margin-right: auto;
   width: 200px;
 }
+
+
+/**********TABLE**********/
 
 td {
   vertical-align: middle;
@@ -71,8 +75,20 @@ table.requests .userRequests td input.requestDeleteCheck, table.requests .userRe
   height: 15px;
 }
 
+
+/********SignUp*********/
+
+#signup {}
+
 hr {
   width: 20%;
+}
+
+
+/*********Login********/
+
+#loginButton {
+  border-bottom: 1px solid black;
 }
 
 

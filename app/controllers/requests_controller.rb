@@ -63,6 +63,11 @@ end
 
   end
 
+  post '/requests/ordered'do
+
+    binding.pry
+  end
+
   post '/requests/delete'do
       @user = User.find_by_id(session[:user_id])
 

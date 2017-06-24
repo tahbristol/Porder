@@ -63,6 +63,11 @@ end
 
   end
 
+  post '/requests/ordered'do
+
+    binding.pry
+  end
+
   post '/requests/delete'do
       @user = User.find_by_id(session[:user_id])
 
@@ -80,19 +85,19 @@ end
    post '/requests/edit'do
     @user = User.find_by_id(session[:user_id])
 
+    if !!params[:request]
+      params[:request].each do |request|
 
-    params[:request].each do |request|
-
-      edit_request = Request.find_by_id(request[:id])
-    edit_request.item = request[:item] unless request[:item].empty?
-    edit_request.vendor =  request[:vendor] unless request[:vendor].empty?
-    edit_request.quantity =  request[:quantity] unless request[:quantity].empty?
-    edit_request.price =  request[:price] unless request[:price].empty?
-    edit_request.url = request[:url] unless request[:url].empty?
-
-    edit_request.save
-end
-      redirect to "/requests/#{@user.slug}/show"
+        edit_request = Request.find_by_id(request[:id])
+        edit_request.item = request[:item] unless request[:item].empty?
+        edit_request.vendor =  request[:vendor] unless request[:vendor].empty?
+        edit_request.quantity =  request[:quantity] unless request[:quantity].empty?
+        edit_request.price =  request[:price] unless request[:price].empty?
+        edit_request.url = request[:url] unless request[:url].empty?
+        edit_request.save
+      end
     end
+      redirect to "/requests/#{@user.slug}/show"
+   end
 
 end

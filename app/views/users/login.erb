@@ -1,4 +1,4 @@
-<h2>Login</h2>
+<!--<h2>Login</h2>
 
 <form action="/login" method="post">
 
@@ -10,4 +10,31 @@
   </label><br>
 
   <input type="submit" value="Submit">
+</form>
+<p>
+  <small>Don't have an account?</small>
+</p>
+<form action="/signup" method="get">
+
+  <input id="signup" type="submit" value="Sign Up">
+</form>
+-->
+
+<form class="form-signin" action="/login" method="post">
+  <h2 class="form-signin-heading">Please sign in</h2>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+  <div class="checkbox">
+    <label>
+      <input name="remember_me" type="checkbox" value="remember-me">
+      Remember me
+    </label>
+  </div>
+  <input id="loginButton" class="btn btn-lg btn-primary btn-block" type="submit" value="Login">
+</form>
+<form class="form-signin" action="/signup" method="get">
+
+  <input id="signupButton" class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Up">
 </form>

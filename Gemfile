@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "2.2.6"
+
 
 
 
@@ -15,16 +15,13 @@ gem 'sinatra-contrib', :require => 'sinatra/reloader'
 gem 'require_all'
 
 gem 'rack-flash3', :require => 'rack-flash'
-
+gem 'pg'
 gem 'thin'
 
-group :production do
-  gem 'puma'
-  gem 'pg'
-end
+
 
 group :development do
-  gem 'sqlite3'
+gem 'sqlite3'
   gem 'tux'
   gem 'pry'
 end

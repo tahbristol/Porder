@@ -53,7 +53,6 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     public_suffix (2.0.5)
-    puma (3.9.1)
     rack (2.0.3)
     rack-flash3 (1.0.5)
       rack
@@ -128,7 +127,6 @@ DEPENDENCIES
   nokogiri
   pg
   pry
-  puma
   rack-flash3
   rack-test
   rake
@@ -140,9 +138,6 @@ DEPENDENCIES
   sqlite3
   thin
   tux
-
-RUBY VERSION
-   ruby 2.2.6p396
 
 BUNDLED WITH
    1.15.1

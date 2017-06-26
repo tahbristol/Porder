@@ -1,9 +1,6 @@
 source "https://rubygems.org"
 
 
-
-
-
 gem 'sinatra'
 
 gem 'nokogiri'
@@ -15,15 +12,18 @@ gem 'sinatra-contrib', :require => 'sinatra/reloader'
 gem 'require_all'
 
 gem 'rack-flash3', :require => 'rack-flash'
-gem 'pg'
+
 gem 'thin'
 
-
+group :production do
+gem 'pg'
+end
 
 group :development do
-gem 'sqlite3'
   gem 'tux'
   gem 'pry'
+gem 'sqlite3'
+
 end
 group :test do
   gem 'rspec'

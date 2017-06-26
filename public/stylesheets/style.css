@@ -11,6 +11,11 @@ body, html {
   background: linear-gradient(to bottom, #879EB2 0%, #5B83B2 100%)
 }
 
+header h1 {
+  margin-left: 150px;
+  padding-top: 10px;
+}
+
 dive.container.welcome.row {
   width: 100%;
   margin: 0px;
@@ -112,8 +117,20 @@ header {
   background-color: #FF953F;
 }
 
+header a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
 .landing {
   margin-top: 200px;
+}
+
+
+/*******SignupPage*****/
+
+.signupPage {
+  margin-top: 150px;
 }
 
 
@@ -134,6 +151,10 @@ header {
 
 #loginButton {
   border-bottom: 1px solid black;
+}
+
+.loginPage {
+  margin-top: 150px;
 }
 
 

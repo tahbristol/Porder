@@ -19,22 +19,30 @@
   <input id="signup" type="submit" value="Sign Up">
 </form>
 -->
+<div class="container loginPage">
+  <form class="form-signin" action="/login" method="post">
+    <h2 class="form-signin-heading">
+      Sign In</h2>
+    <label for="inputEmail" class="sr-only">
+      address</label>
+    <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus><br>
+    <label for="inputPassword" class="sr-only">Please Email Password</label>
+    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <div class="checkbox">
+      <label>
+        <input name="remember_me" type="checkbox" value="remember-me">
+        Remember me
+      </label>
+    </div>
+    <input id="loginButton" class="btn btn-lg btn-primary btn-block" type="submit" value="Login">
+  </form>
 
-<form class="form-signin" action="/login" method="post">
-  <h2 class="form-signin-heading">Please sign in</h2>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-  <div class="checkbox">
-    <label>
-      <input name="remember_me" type="checkbox" value="remember-me">
-      Remember me
-    </label>
-  </div>
-  <input id="loginButton" class="btn btn-lg btn-primary btn-block" type="submit" value="Login">
-</form>
-<form class="form-signin" action="/signup" method="get">
+  <p>
+    <small>Need an account?
+      <a href="/signup">
+        <strong>Sign Up</strong>
+      </a>
+    </small>
+  </p>
 
-  <input id="signupButton" class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Up">
-</form>
+</div>

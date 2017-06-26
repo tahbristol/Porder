@@ -14,9 +14,9 @@ gem 'require_all'
 gem 'rack-flash3', :require => 'rack-flash'
 
 gem 'thin'
-
-group :production do
 gem 'pg'
+group :production do
+
 end
 
 group :development do

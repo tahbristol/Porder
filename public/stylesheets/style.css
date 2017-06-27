@@ -152,11 +152,23 @@ header a {
 #profile-card {
   border: 1px solid #4B4B4B;
   border-radius: 8px;
-  max-width: 600px;
+
 }
 
 #profile-card .col-sm-6 {
   padding: 20px;
+}
+
+.profile {
+  margin-top: 150px;
+}
+
+
+@media only screen and (min-width: 750px) {
+    #profile-card {
+      width: 600px;
+      margin: 0 auto;
+    }
 }
 
 
@@ -178,11 +190,7 @@ header a {
 }
 
 
-/******User Profile*****/
 
-.profile {
-  margin-top: 150px;
-}
 
 
 /*********Buttons***********/

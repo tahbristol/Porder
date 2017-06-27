@@ -1,5 +1,5 @@
 html {
-  height: 100%;
+
 }
 
 * {
@@ -11,8 +11,15 @@ button {
 }
 
 .background {
-  background-repeat: no-repeat;
-  background: linear-gradient(#5B83B2, #879EB2)
+
+  background-color: #879EB2;
+}
+
+@media only screen and (min-width: 1200px ){
+  html {
+    height: 100%;
+  }
+
 }
 
 header h1 {
@@ -87,7 +94,7 @@ table.requests td input.requestDeleteCheck {
   width: 15px;
 }
 
-table.requests td input#ordered {
+table.requests td input.ordered {
   width: 20px;
 }
 
@@ -95,12 +102,12 @@ table.requests td input#ordered {
   background-color: lightblue !important;
 }
 
-table.requests .userRequests td input.requestDeleteCheck, table.requests .userRequests td input#ordered {
+table.requests .userRequests td input.requestDeleteCheck, table.requests .userRequests td input.ordered {
   width: 15px;
   height: 15px;
 }
 
-form#orderedRequests {
+form.orderedRequests {
   margin-top: 20px !important;
 }
 
@@ -197,4 +204,7 @@ header a {
 
 input#deleteForm, input#newForm, input#cancelForm, button#addLine {
   margin-bottom: 25px;
+}
+form#orderedRequests{
+  margin-top:22px;
 }

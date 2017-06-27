@@ -63,10 +63,6 @@ end
 
   end
 
-  post '/requests/ordered'do
-
-    binding.pry
-  end
 
   post '/requests/delete'do
       @user = User.find_by_id(session[:user_id])
@@ -98,6 +94,11 @@ end
       end
     end
       redirect to "/requests/#{@user.slug}/show"
+   end
+
+   post '/requests/ordered'do
+
+    redirect to '/requests'
    end
 
 end

@@ -26,20 +26,21 @@ class RequestsController < ApplicationController
     end
   end
 
-  get '/requests/cancel'do
-  if logged_in?(session)
-    @user = User.find_by_id(session[:user_id])
-    @requests = @user.requests
-    erb :'/requests/show'
-  else
-    redirect to '/login'
-  end
-end
+
 
   get '/requests/:slug/show'do
     if logged_in?(session)
     @user = User.find_by_slug(params[:slug])
-    @requests = @user.requests
+    @current_requests = []
+    @ordered_requests = []
+    @user.requests.each do |request|
+      if request.ordered
+        @ordered_requests << request
+      else
+        @current_requests << request
+      end
+
+    end
     erb :'/requests/show'
   else
     redirect to '/login'
@@ -104,17 +105,31 @@ end
    end
 
    post '/requests/ordered'do
-     params[:requests][:ordered].each do |request_id|
-       request = Request.find_by_id(request_id)
+     if !!params[:requests]
+       params[:requests][:ordered].each do |request_id|
+         request = Request.find_by_id(request_id)
 
-       if !request.ordered
-         request.ordered = true
-         request.save
-        
+         if !request.ordered
+           request.ordered = true
+           request.save
+
+         end
        end
-     end
 
-    redirect to '/requests'
+      redirect to '/requests'
+     else
+       redirect to '/requests'
+     end
    end
+
+   post '/requests/cancel'do
+   if logged_in?(session)
+     @user = User.find_by_id(session[:user_id])
+     @requests = @user.requests
+     redirect to "/requests/#{@user.slug}/show"
+   else
+     redirect to '/login'
+   end
+ end
 
 end

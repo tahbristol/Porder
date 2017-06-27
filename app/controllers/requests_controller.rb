@@ -1,10 +1,17 @@
 class RequestsController < ApplicationController
 
 
-
   get '/requests'do
     if logged_in?(session)
       @user = User.find_by_id(session[:user_id])
+      @requests = []
+
+      Request.all.each do |request|
+        if !request.ordered
+
+          @requests << request
+        end
+      end
       erb :'requests/index'
     else
       redirect to'/signup'
@@ -97,6 +104,15 @@ end
    end
 
    post '/requests/ordered'do
+     params[:requests][:ordered].each do |request_id|
+       request = Request.find_by_id(request_id)
+
+       if !request.ordered
+         request.ordered = true
+         request.save
+        
+       end
+     end
 
     redirect to '/requests'
    end

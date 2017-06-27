@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container profile">
   <div id="profile-card" class="row">
     <div class="col-sm-6">
       <h2><%=@user.name%></h2><br>
@@ -6,17 +6,17 @@
     </div>
     <div class="col-sm-6">
       <form action="/requests/<%=@user.slug%>/show" method='get'>
-        <button class='btn-primary' type="submit" value="View Requests">View Requests</button>
+        <input class='btn-primary' type="submit" value="View Requests">
 
       </form><br>
 
       <form action="/requests/new" method='get'>
-        <button class='btn-primary' type="submit" value="New Requests">New Request</button>
+        <input class='btn-primary' type="submit" value="New Requests">
 
       </form><br>
 
       <form action="/logout" method='post'>
-        <button class='btn-primary' type="submit" value="logout">Logout</button>
+        <input class='btn-primary' type="submit" value="Logout">
 
       </form>
     </div>

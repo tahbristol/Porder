@@ -1,14 +1,18 @@
-body, html {
+html {
   height: 100%;
-  width: 100%;
 }
 
 * {
   font-family: 'Raleway', sans-serif;
 }
 
+button {
+  border-radius: 8px;
+}
+
 .background {
-  background: linear-gradient(to bottom, #879EB2 0%, #5B83B2 100%)
+  background-repeat: no-repeat;
+  background: linear-gradient(#5B83B2, #879EB2)
 }
 
 header h1 {
@@ -16,7 +20,7 @@ header h1 {
   padding-top: 10px;
 }
 
-dive.container.welcome.row {
+div.container.welcome.row {
   width: 100%;
   margin: 0px;
 }
@@ -96,6 +100,15 @@ table.requests .userRequests td input.requestDeleteCheck, table.requests .userRe
   height: 15px;
 }
 
+form#orderedRequests {
+  margin-top: 20px !important;
+}
+
+.requestIndex {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
 
 /********SignUp*********/
 
@@ -130,7 +143,7 @@ header a {
 /*******SignupPage*****/
 
 .signupPage {
-  margin-top: 150px;
+  margin-top: 100px;
 }
 
 
@@ -139,7 +152,7 @@ header a {
 #profile-card {
   border: 1px solid #4B4B4B;
   border-radius: 8px;
-  max-width: 800px;
+  max-width: 600px;
 }
 
 #profile-card .col-sm-6 {
@@ -154,6 +167,20 @@ header a {
 }
 
 .loginPage {
+  margin-top: 100px;
+}
+
+
+/********Requests*******/
+
+.requests, .newRequests, .editRequests {
+  margin-top: 100px;
+}
+
+
+/******User Profile*****/
+
+.profile {
   margin-top: 150px;
 }
 

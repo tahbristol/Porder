@@ -1,32 +1,34 @@
-<h2>New Request</h2>
+<div class="container newRequests">
+  <h2>New Request</h2>
 
-<form action="/new" method="post">
-  <div class="table-responsive">
-    <table class="requests table">
-      <tr>
+  <form action="/new" method="post">
+    <div class="table-responsive">
+      <table class="requests table">
+        <tr>
 
-        <th>Item</th>
-        <th>Price</th>
-        <th>Qty.</th>
-        <th>Vendor</th>
-        <th>URL</th>
+          <th>Item</th>
+          <th>Price</th>
+          <th>Qty.</th>
+          <th>Vendor</th>
+          <th>URL</th>
 
-      </tr>
+        </tr>
 
-      <tr>
-        <td><input id="item" name="request[][item]"></td>
-        <td><input id="price" name="request[][price]"></td>
-        <td><input id="quantity" name="request[][quantity]"></td>
-        <td><input id="vendor" name="request[][vendor]"></td>
-        <td><input id="url" name="request[][url]"></td>
-      </tr>
-    </table>
-  </div><br>
+        <tr>
+          <td><input id="item" name="request[][item]"></td>
+          <td><input id="price" name="request[][price]"></td>
+          <td><input id="quantity" name="request[][quantity]"></td>
+          <td><input id="vendor" name="request[][vendor]"></td>
+          <td><input id="url" name="request[][url]"></td>
+        </tr>
+      </table>
+    </div><br>
 
-  <input id="newForm" type="submit" value="Submit Request">
-</form>
+    <input id="newForm" class="btn btn-primary" type="submit" value="Submit Request">
+  </form>
 
-<button id="addLine">Add Line</button><br>
-<form action="/requests/cancel" method="get">
-  <input id="cancelForm" type="submit" value="Cancel"/>
-</form>
+  <button id="addLine" class="btn btn-primary">Add Line</button><br>
+  <form action="/requests/cancel" method="get">
+    <input id="cancelForm" class="btn btn-primary" type="submit" value="Cancel"/>
+  </form>
+</div>

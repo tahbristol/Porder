@@ -1,49 +1,51 @@
-<h2>All Requests</h2>
-<hr><br>
-<div class="table-responsive">
-  <table class='requests table'>
-    <tr>
-      <th>Request No.</th>
-      <th>Item</th>
-      <th>Price</th>
-      <th>Qty.</th>
-      <th>Vendor</th>
-      <th>URL</th>
-      <th>Requestor</th>
-      <th>Date</th>
-      <th>Ordered</th>
-    </tr>
-    <form action="requests/ordered" method="post">
-      <% Request.all.each do |request| %>
-
+<div class="container requestIndex">
+  <h2>All Requests</h2>
+  <hr><br>
+  <div class="table-responsive">
+    <table class='requests table index'>
       <tr>
-        <td><%=request.id %></td>
-        <td><%=request.item %></td>
-        <td><%=request.price %></td>
-        <td><%=request.quantity %></td>
-        <td><%=request.vendor %></td>
-        <td><%=request.url %></td>
-        <% if !!request.user%>
-        <td><%=request.user.name %></td>
-        <%else%>
-        <td></td>
-        <%end%>
-        <td><%=request.created_at %></td>
-        <td><input id="ordered" name="requests[ordered][]" value="<%=request.id%>" type="checkbox"/></td>
+        <th>Request No.</th>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Qty.</th>
+        <th>Vendor</th>
+        <th>URL</th>
+        <th>Requestor</th>
+        <th>Date</th>
+        <th>Ordered</th>
       </tr>
+      <form action="requests/ordered" method="post">
+        <% Request.all.each do |request| %>
 
-      <%end%>
+        <tr>
+          <td><%=request.id %></td>
+          <td><%=request.item %></td>
+          <td><%=request.price %></td>
+          <td><%=request.quantity %></td>
+          <td><%=request.vendor %></td>
+          <td><%=request.url %></td>
+          <% if !!request.user%>
+          <td><%=request.user.name %></td>
+          <%else%>
+          <td></td>
+          <%end%>
+          <td><%=request.created_at %></td>
+          <td><input id="ordered" name="requests[ordered][]" value="<%=request.id%>" type="checkbox"/></td>
+        </tr>
 
-    </table>
+        <%end%>
 
-  </div><br>
-  <input class="btn btn-primary" type="submit" value="Ordered">
-</form>
-<form action="/requests/<%=@user.slug%>/show" method='get'>
-  <input class="btn btn-primary" type="submit" value="My Requests">
+      </table>
 
-</form><br>
-<form id="newForm" action="/requests/new" method='get'>
-  <input class="btn btn-primary" type="submit" value="New Requests">
+    </div><br>
+    <input class="btn btn-primary" type="submit" value="Ordered">
+  </form><br>
+  <form id="orderedRequests" action="/requests/<%=@user.slug%>/show" method='get'>
+    <input class="btn btn-primary" type="submit" value="My Requests">
 
-</form>
+  </form><br>
+  <form id="newForm" action="/requests/new" method='get'>
+    <input class="btn btn-primary" type="submit" value="New Requests">
+
+  </form>
+</div>

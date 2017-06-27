@@ -1,58 +1,60 @@
-<h3>Current Requests</h3>
-<div class="table-responsive">
-  <table class='requests table currentRequests'>
-    <tr>
-      <th>Request No.</th>
-      <th>Item</th>
-      <th>Price</th>
-      <th>Qty.</th>
-      <th>Vendor</th>
-      <th>URL</th>
-      <th>Requestor</th>
-      <th>Date</th>
-
-      <th>Delete</th>
-    </tr>
-    <form action='/requests/delete' method='post'>
-      <% @requests.each do |request| %>
-
+<div class="container requests">
+  <h3>Current Requests</h3>
+  <div class="table-responsive">
+    <table class='requests table currentRequests'>
       <tr>
-        <td><%=request.id %></td>
-        <td><%=request.item %></td>
-        <td><%=request.price %></td>
-        <td><%=request.quantity %></td>
-        <td><%=request.vendor %></td>
-        <td><%=request.url %></td>
-        <% if !!request.user%>
-        <td><%=request.user.name %></td>
-        <%else%>
-        <td></td>
-        <%end%>
-        <td><%=request.created_at %></td>
-        <td>
-          <input type="checkbox" name="request[request_ids][]" value="<%=request.id%>" class="requestDeleteCheck"></input>
-        </td>
+        <th>Request No.</th>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Qty.</th>
+        <th>Vendor</th>
+        <th>URL</th>
+        <th>Requestor</th>
+        <th>Date</th>
+
+        <th>Delete</th>
       </tr>
-      <%end%>
+      <form action='/requests/delete' method='post'>
+        <% @requests.each do |request| %>
 
-      <br></table>
-  </div><br>
-  <input id="deleteForm" type="submit" value="Delete"/><br>
-</form>
-<form id="allRequestsForm" action="/requests" method='get'>
-  <input type="submit" value="All Requests">
+        <tr>
+          <td><%=request.id %></td>
+          <td><%=request.item %></td>
+          <td><%=request.price %></td>
+          <td><%=request.quantity %></td>
+          <td><%=request.vendor %></td>
+          <td><%=request.url %></td>
+          <% if !!request.user%>
+          <td><%=request.user.name %></td>
+          <%else%>
+          <td></td>
+          <%end%>
+          <td><%=request.created_at %></td>
+          <td>
+            <input type="checkbox" name="request[request_ids][]" value="<%=request.id%>" class="requestDeleteCheck btn-primary"/>
+          </td>
+        </tr>
+        <%end%>
 
-</form><br>
+        <br></table>
+    </div><br>
+    <input id="deleteForm" class="btn btn-primary" type="submit" value="Delete"/><br>
+  </form>
+  <form id="allRequestsForm" action="/requests" method='get'>
+    <input type="submit" class="btn btn-primary" value="All Requests">
 
-<form id="editForm" action="/requests/edit" method='get'>
-  <input type="submit" value="Edit Requests">
+  </form><br>
 
-</form><br>
-<form id="newForm" action="/requests/new" method='get'>
-  <input type="submit" value="New Requests">
+  <form id="editForm" action="/requests/edit" method='get'>
+    <input type="submit" class="btn btn-primary" value="Edit Requests">
 
-</form><br>
-<form id="logout" action="/logout" method='post'>
-  <input type="submit" value="logout">
+  </form><br>
+  <form id="newForm" action="/requests/new" method='get'>
+    <input type="submit" class="btn btn-primary" value="New Requests">
 
-</form>
+  </form><br>
+  <form id="logout" action="/logout" method='post'>
+    <input type="submit" class="btn btn-primary" value="logout">
+
+  </form>
+</div>

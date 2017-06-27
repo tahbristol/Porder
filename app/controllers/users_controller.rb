@@ -3,13 +3,15 @@ class UsersController < ApplicationController
 
 
   get '/users'do
+
     erb :'/users/index'
   end
 
   get '/signup'do
+
     if logged_in?(session)
       @user = User.find_by_id(session[:user_id])
-      redirect to '/users/#{@user.slug}'
+      redirect to "/users/#{@user.slug}"
     else
       erb :'/users/signup'
     end

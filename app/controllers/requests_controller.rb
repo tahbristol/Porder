@@ -51,7 +51,12 @@ class RequestsController < ApplicationController
   get '/requests/edit'do
     if logged_in?(session)
     @user = User.find_by_id(session[:user_id])
-    @requests = @user.requests
+    @requests = []
+    @user.requests.each do |request|
+      if !request.ordered
+        @requests << request
+      end
+    end
     erb :'/requests/edit'
   else
     redirect to '/login'

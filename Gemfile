@@ -15,6 +15,7 @@ gem 'rack-flash3', :require => 'rack-flash'
 
 gem 'thin'
 gem 'pg'
+gem 'pony'
 group :production do
 
 end

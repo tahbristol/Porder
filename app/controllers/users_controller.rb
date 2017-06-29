@@ -56,8 +56,6 @@ class UsersController < ApplicationController
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      session.options[:expire_after] = 2592000 unless params[:remember_me].nil?
-      [200, {:msg => 'User logged in'}.to_json]
       redirect to "/users/#{@user.slug}"
     else
 =begin

@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+
   $("#addLine").on("click", function() {
     var table = $('.requests');
 

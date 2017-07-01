@@ -22,13 +22,13 @@ $(document).ready(function() {
 
 
   $("#guestBox").on("click", function() {
-    if ($(this).prop("checked") == true) {
+    if ($(this).prop("checked") == false) {
+      document.getElementById("inputEmail").value = "";
+      document.getElementById("inputPassword").value = "";
+    } else if ($(this).prop("checked") == true) {
       document.getElementById("inputEmail").value = "guest@account.com";
       document.getElementById("inputPassword").value = "password";
 
-    } else if ($(this).prop("checked") == false) {
-      document.getElementById("inputEmail").value = "";
-      document.getElementById("inputPassword").value = "";
     }
 
 

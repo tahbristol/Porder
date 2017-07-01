@@ -122,6 +122,8 @@ end
     end
   end
 
+
+
   def email(address, item, user)
     Pony.mail(to: address, from: 'pOrder@track.com', subject: 'Requests', body: "Your request of #{item} has been ordred by #{user}", via: :smtp,
               via_options: {
@@ -129,9 +131,11 @@ end
                 port: '587',
                 enable_starttls_auto: true,
                 user_name: 'tahbristol@gmail.com',
-                password: 'xhtqysxsjzahygbe',
+                password: '',
                 authentication: :plain, # :plain, :login, :cram_md5, no auth by default
                 domain: 'localhost.localdomain' # the HELO domain provided by the client to the server
               })
   end
+
+
 end

@@ -53,6 +53,10 @@ class UsersController < ApplicationController
 
 
   post '/login' do
+    binding.pry
+    if !!params[:guest]
+      @user = User.find_by(email: "guest@account.com")
+    else
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
@@ -63,6 +67,7 @@ class UsersController < ApplicationController
 =end
       redirect to '/login'
     end
+  end
   end
 
 

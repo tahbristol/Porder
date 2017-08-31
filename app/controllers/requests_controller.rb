@@ -108,6 +108,9 @@ end
         else
           redirect to '/requests'
         end
+        #this if statement does not handle the post request if user clicks "order" button without checking the checkbox of a line item.
+        #Currently it sends the user to a blank page. It should redirect to current page and ideally with a message telling the user to
+        #select an item.     else  redirect to '/requests' or "redirect back".
       end
     end
   end
